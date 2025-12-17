@@ -16,27 +16,33 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  background: #fde9ee;
   min-height: 100vh;
+  background: linear-gradient(
+    to bottom,
+    #fde9ee 0%,
+    #fde9ee 72%,
+    #fff1f4 72%,
+    #fff1f4 100%
+  );
   overflow-x: hidden;
 }
 
-/* MAIN CONTAINER */
+/* MAIN CONTENT */
 .container {
   max-width: 900px;
   margin: auto;
   text-align: center;
-  padding: 70px 20px 120px;
+  padding: 70px 20px 90px;
 }
 
-/* TOP NOTE */
+/* TOP LINE */
 .top-text {
   font-size: 14px;
   color: #666;
   margin-bottom: 26px;
 }
 
-/* HEADING */
+/* TITLE */
 h1 {
   font-family: 'Playfair Display', serif;
   font-size: 38px;
@@ -45,7 +51,7 @@ h1 {
   margin-bottom: 14px;
 }
 
-/* SUBTEXT */
+/* SUBTITLE */
 .subtitle {
   font-size: 16px;
   color: #666;
@@ -159,7 +165,7 @@ setInterval(() => {
   }
 }, 1000);
 
-/* falling hearts */
+/* hearts */
 setInterval(() => {
   const heart = document.createElement("div");
   heart.className = "heart";
@@ -173,4 +179,3 @@ setInterval(() => {
 
 </body>
 </html>
-
