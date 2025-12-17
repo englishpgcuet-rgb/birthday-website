@@ -1,208 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Happy Birthday ❤️</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Happy Birthday My Love</title>
 
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(180deg, #ff5f9e, #ffd1e8);
-      color: #2f2f2f;
-      overflow-x: hidden;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 
-    /* Falling Hearts */
-    .heart {
-      position: fixed;
-      top: -10px;
-      color: rgba(255, 255, 255, 0.9);
-      font-size: 18px;
-      animation: fall linear forwards;
-      z-index: 9999;
-      pointer-events: none;
-    }
-    @keyframes fall {
-      to {
-        transform: translateY(110vh) rotate(360deg);
-        opacity: 0;
-      }
-    }
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    .hero {
-      text-align: center;
-      padding: 70px 20px 40px;
-      color: white;
-    }
+body {
+  font-family: 'Inter', sans-serif;
+  background: #fde8ec;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
 
-    .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-    }
+.wrapper {
+  text-align: center;
+  padding: 60px 20px 100px;
+}
 
-    .hero p { opacity: 0.95; }
+.top-note {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 22px;
+}
 
-    .countdown {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      margin-top: 30px;
-    }
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  font-weight: 600;
+  color: #2c2c2c;
+  margin-bottom: 12px;
+}
 
-    .time-box {
-      background: white;
-      border-radius: 18px;
-      padding: 12px 14px;
-      min-width: 70px;
-    }
+.sub {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 40px;
+}
 
-    .time-box h2 { font-size: 1.4rem; }
-    .time-box span { font-size: 0.7rem; opacity: 0.6; }
+/* COUNTDOWN */
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+}
 
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 24px;
-      display: none;
-    }
+.time {
+  background: #fff;
+  border-radius: 20px;
+  padding: 18px 20px;
+  width: 85px;
+  box-shadow: 0 20px 35px rgba(255, 182, 193, 0.45);
+}
 
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 18px;
-      margin: 40px 0;
-    }
+.time span {
+  font-size: 28px;
+  font-weight: 600;
+  color: #333;
+}
 
-    .gallery img {
-      width: 100%;
-      border-radius: 22px;
-      aspect-ratio: 4/5;
-      object-fit: cover;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-    }
+.time p {
+  font-size: 13px;
+  color: #777;
+  margin-top: 4px;
+}
 
-    .message {
-      background: white;
-      border-radius: 26px;
-      padding: 32px;
-      margin-bottom: 40px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-    }
+.footer {
+  margin-top: 50px;
+  font-size: 14px;
+  color: #777;
+}
 
-    .message h2 {
-      font-family: 'Playfair Display', serif;
-      margin-bottom: 16px;
-    }
+/* Falling hearts */
+.heart {
+  position: fixed;
+  top: -10px;
+  font-size: 14px;
+  animation: fall linear infinite;
+  color: #ff8fab;
+}
 
-    .message p { line-height: 1.7; }
-
-    .music {
-      text-align: center;
-      margin-bottom: 60px;
-    }
-
-    audio {
-      width: 100%;
-      max-width: 320px;
-    }
-
-    footer {
-      text-align: center;
-      color: white;
-      font-size: 0.85rem;
-      margin-bottom: 20px;
-    }
-
-    #lockMessage {
-      margin-top: 20px;
-      font-size: 1.1rem;
-      color: white;
-    }
-  </style>
+@keyframes fall {
+  to {
+    transform: translateY(110vh);
+  }
+}
+</style>
 </head>
+
 <body>
 
-  <section class="hero">
-    <h1>Happy Birthday, My Love 🎂</h1>
-    <p>30 December — the day my favorite person was born</p>
+<div class="wrapper">
+  <div class="top-note">🤍 This surprise opens on <strong>30 December</strong></div>
 
-    <div class="countdown">
-      <div class="time-box"><h2 id="days">00</h2><span>DAYS</span></div>
-      <div class="time-box"><h2 id="hours">00</h2><span>HOURS</span></div>
-      <div class="time-box"><h2 id="minutes">00</h2><span>MIN</span></div>
-      <div class="time-box"><h2 id="seconds">00</h2><span>SEC</span></div>
+  <h1>Happy Birthday, My Love 🎂</h1>
+
+  <div class="sub">30 December — a day that means everything to me</div>
+
+  <div class="countdown">
+    <div class="time">
+      <span id="days">00</span>
+      <p>Days</p>
     </div>
-
-    <div id="lockMessage">🤍 This surprise opens on 30 December</div>
-  </section>
-
-  <div class="container">
-
-    <section class="gallery">
-      <img src="photo1.jpg" alt="Photo 1">
-      <img src="photo2.jpg" alt="Photo 2">
-    </section>
-
-    <section class="message">
-      <h2>For You 🤍</h2>
-      <p>
-        Happy Birthday to the one who feels like home to me. You make my world softer, safer, and so full of love. I’m endlessly grateful for you — for your patience, your warmth, and the way you choose me every single day.
-        <br><br>
-        No matter where life takes us, remember this: you are deeply loved, fiercely supported, and never alone. I’m so lucky that I get to love you.
-      </p>
-    </section>
-
-    <section class="music">
-      <p style="margin-bottom:10px; opacity:0.7">Tum Se Hi 🎶</p>
-      <audio controls autoplay loop>
-        <source src="tumsehi.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-      </audio>
-    </section>
-
+    <div class="time">
+      <span id="hours">00</span>
+      <p>Hours</p>
+    </div>
+    <div class="time">
+      <span id="minutes">00</span>
+      <p>Minutes</p>
+    </div>
+    <div class="time">
+      <span id="seconds">00</span>
+      <p>Seconds</p>
+    </div>
   </div>
 
-  <footer>
-    Made with love, just for you ❤️
-  </footer>
+  <div class="footer">Made with love, just for you ❤️</div>
+</div>
 
-  <script>
-    const targetDate = new Date("December 30, 2025 00:00:00").getTime();
+<script>
+const target = new Date("December 30, 2025 00:00:00").getTime();
 
-    function updateCountdown() {
-      const now = new Date().getTime();
-      const distance = targetDate - now;
+setInterval(() => {
+  const now = new Date().getTime();
+  const diff = target - now;
 
-      if (distance <= 0) {
-        document.querySelector('.container').style.display = 'block';
-        document.getElementById('lockMessage').style.display = 'none';
-      }
+  if (diff > 0) {
+    document.getElementById("days").innerText =
+      Math.floor(diff / (1000 * 60 * 60 * 24));
+    document.getElementById("hours").innerText =
+      Math.floor((diff / (1000 * 60 * 60)) % 24);
+    document.getElementById("minutes").innerText =
+      Math.floor((diff / (1000 * 60)) % 60);
+    document.getElementById("seconds").innerText =
+      Math.floor((diff / 1000) % 60);
+  }
+}, 1000);
 
-      document.getElementById('days').innerText = Math.max(0, Math.floor(distance / (1000 * 60 * 60 * 24)));
-      document.getElementById('hours').innerText = Math.max(0, Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
-      document.getElementById('minutes').innerText = Math.max(0, Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)));
-      document.getElementById('seconds').innerText = Math.max(0, Math.floor((distance % (1000 * 60)) / 1000));
-    }
-
-    setInterval(updateCountdown, 1000);
-    updateCountdown();
-
-    // Falling hearts
-    function createHeart() {
-      const heart = document.createElement('div');
-      heart.className = 'heart';
-      heart.innerHTML = '❤';
-      heart.style.left = Math.random() * 100 + 'vw';
-      heart.style.animationDuration = 3 + Math.random() * 3 + 's';
-      document.body.appendChild(heart);
-      setTimeout(() => heart.remove(), 6000);
-    }
-    setInterval(createHeart, 300);
-  </script>
+/* hearts */
+setInterval(() => {
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerText = "💗";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.animationDuration = 3 + Math.random() * 4 + "s";
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 7000);
+}, 300);
+</script>
 
 </body>
 </html>
