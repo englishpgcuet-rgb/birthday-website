@@ -27,7 +27,7 @@ body {
   overflow-x: hidden;
 }
 
-/* MAIN CONTENT */
+/* MAIN */
 .container {
   max-width: 900px;
   margin: auto;
@@ -35,14 +35,12 @@ body {
   padding: 70px 20px 90px;
 }
 
-/* TOP LINE */
 .top-text {
   font-size: 14px;
   color: #666;
   margin-bottom: 26px;
 }
 
-/* TITLE */
 h1 {
   font-family: 'Playfair Display', serif;
   font-size: 38px;
@@ -51,7 +49,6 @@ h1 {
   margin-bottom: 14px;
 }
 
-/* SUBTITLE */
 .subtitle {
   font-size: 16px;
   color: #666;
@@ -74,10 +71,10 @@ h1 {
 }
 
 .box span {
-  display: block;
   font-size: 28px;
   font-weight: 600;
   color: #333;
+  display: block;
 }
 
 .box small {
@@ -87,14 +84,51 @@ h1 {
   display: block;
 }
 
-/* FOOTER */
 .footer {
   margin-top: 60px;
   font-size: 14px;
   color: #777;
 }
 
-/* FALLING HEARTS */
+/* LOCKED MESSAGE */
+#locked {
+  margin-top: 40px;
+  font-size: 15px;
+  color: #777;
+}
+
+/* SURPRISE */
+#surprise {
+  display: none;
+  margin-top: 50px;
+}
+
+#surprise p {
+  max-width: 520px;
+  margin: 0 auto 30px;
+  font-size: 16px;
+  color: #444;
+  line-height: 1.6;
+}
+
+#surprise img {
+  width: 220px;
+  border-radius: 20px;
+  margin: 10px;
+}
+
+#playBtn {
+  margin-top: 30px;
+  background: #ff8fa3;
+  border: none;
+  padding: 12px 26px;
+  color: white;
+  border-radius: 25px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* HEARTS */
 .heart {
   position: fixed;
   top: -10px;
@@ -124,22 +158,30 @@ h1 {
   </div>
 
   <div class="countdown">
-    <div class="box">
-      <span id="days">00</span>
-      <small>Days</small>
+    <div class="box"><span id="days">00</span><small>Days</small></div>
+    <div class="box"><span id="hours">00</span><small>Hours</small></div>
+    <div class="box"><span id="minutes">00</span><small>Minutes</small></div>
+    <div class="box"><span id="seconds">00</span><small>Seconds</small></div>
+  </div>
+
+  <div id="locked">💗 Something special is waiting for you…</div>
+
+  <div id="surprise">
+    <p>
+      Happy Birthday my love 🤍<br>
+      You make my life softer, my heart calmer, and my days happier.
+      This little space is just a reminder of how deeply you are loved —
+      today, tomorrow, and always.
+    </p>
+
+    <img src="photo1.jpg" alt="Us">
+    <img src="photo2.jpg" alt="Us">
+
+    <div>
+      <button id="playBtn">▶ Play our song</button>
     </div>
-    <div class="box">
-      <span id="hours">00</span>
-      <small>Hours</small>
-    </div>
-    <div class="box">
-      <span id="minutes">00</span>
-      <small>Minutes</small>
-    </div>
-    <div class="box">
-      <span id="seconds">00</span>
-      <small>Seconds</small>
-    </div>
+
+    <audio id="song" src="tumsehi.mp3"></audio>
   </div>
 
   <div class="footer">Made with love, just for you 💗</div>
@@ -154,18 +196,23 @@ setInterval(() => {
   const diff = targetDate - now;
 
   if (diff > 0) {
-    document.getElementById("days").innerText =
-      Math.floor(diff / (1000 * 60 * 60 * 24));
-    document.getElementById("hours").innerText =
-      Math.floor((diff / (1000 * 60 * 60)) % 24);
-    document.getElementById("minutes").innerText =
-      Math.floor((diff / (1000 * 60)) % 60);
-    document.getElementById("seconds").innerText =
-      Math.floor((diff / 1000) % 60);
+    document.getElementById("days").innerText = Math.floor(diff / (1000 * 60 * 60 * 24));
+    document.getElementById("hours").innerText = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    document.getElementById("minutes").innerText = Math.floor((diff / (1000 * 60)) % 60);
+    document.getElementById("seconds").innerText = Math.floor((diff / 1000) % 60);
+  } else {
+    document.querySelector(".countdown").style.display = "none";
+    document.getElementById("locked").style.display = "none";
+    document.getElementById("surprise").style.display = "block";
   }
 }, 1000);
 
-/* hearts */
+/* play song on tap (mobile safe) */
+document.getElementById("playBtn").addEventListener("click", () => {
+  document.getElementById("song").play();
+});
+
+/* falling hearts */
 setInterval(() => {
   const heart = document.createElement("div");
   heart.className = "heart";
@@ -179,3 +226,4 @@ setInterval(() => {
 
 </body>
 </html>
+
