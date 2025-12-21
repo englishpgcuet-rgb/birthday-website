@@ -35,72 +35,23 @@ body {
   padding: 70px 20px 90px;
 }
 
-.top-text {
-  font-size: 14px;
-  color: #666;
-  margin-bottom: 26px;
-}
-
 h1 {
   font-family: 'Playfair Display', serif;
   font-size: 38px;
   font-weight: 600;
   color: #2b2b2b;
-  margin-bottom: 14px;
+  margin-bottom: 18px;
 }
 
 .subtitle {
   font-size: 16px;
   color: #666;
-  margin-bottom: 46px;
-}
-
-/* COUNTDOWN */
-.countdown {
-  display: flex;
-  justify-content: center;
-  gap: 18px;
-}
-
-.box {
-  background: #ffffff;
-  border-radius: 20px;
-  padding: 18px 20px;
-  width: 88px;
-  box-shadow: 0 25px 40px rgba(255, 170, 190, 0.35);
-}
-
-.box span {
-  font-size: 28px;
-  font-weight: 600;
-  color: #333;
-  display: block;
-}
-
-.box small {
-  font-size: 13px;
-  color: #777;
-  margin-top: 4px;
-  display: block;
-}
-
-.footer {
-  margin-top: 60px;
-  font-size: 14px;
-  color: #777;
-}
-
-/* LOCKED MESSAGE */
-#locked {
-  margin-top: 40px;
-  font-size: 15px;
-  color: #777;
+  margin-bottom: 40px;
 }
 
 /* SURPRISE */
 #surprise {
-  display: none;
-  margin-top: 50px;
+  margin-top: 10px;
 }
 
 #surprise p {
@@ -128,6 +79,12 @@ h1 {
   cursor: pointer;
 }
 
+.footer {
+  margin-top: 60px;
+  font-size: 14px;
+  color: #777;
+}
+
 /* HEARTS */
 .heart {
   position: fixed;
@@ -149,29 +106,18 @@ h1 {
 
 <div class="container">
 
-  <div class="top-text">🤍 This surprise opens on <strong>30 December</strong></div>
-
   <h1>Happy Birthday, My Love 🎂</h1>
 
   <div class="subtitle">
-    30 December — a day that means everything to me
+    A little space made just for you 🤍
   </div>
-
-  <div class="countdown">
-    <div class="box"><span id="days">00</span><small>Days</small></div>
-    <div class="box"><span id="hours">00</span><small>Hours</small></div>
-    <div class="box"><span id="minutes">00</span><small>Minutes</small></div>
-    <div class="box"><span id="seconds">00</span><small>Seconds</small></div>
-  </div>
-
-  <div id="locked">💗 Something special is waiting for you…</div>
 
   <div id="surprise">
     <p>
       Happy Birthday my love 🤍<br>
       You make my life softer, my heart calmer, and my days happier.
       This little space is just a reminder of how deeply you are loved —
-      today, tomorrow, and always.
+      always.
     </p>
 
     <img src="photo1.jpg" alt="Us">
@@ -189,25 +135,7 @@ h1 {
 </div>
 
 <script>
-const targetDate = new Date("December 30, 2025 00:00:00").getTime();
-
-setInterval(() => {
-  const now = new Date().getTime();
-  const diff = targetDate - now;
-
-  if (diff > 0) {
-    document.getElementById("days").innerText = Math.floor(diff / (1000 * 60 * 60 * 24));
-    document.getElementById("hours").innerText = Math.floor((diff / (1000 * 60 * 60)) % 24);
-    document.getElementById("minutes").innerText = Math.floor((diff / (1000 * 60)) % 60);
-    document.getElementById("seconds").innerText = Math.floor((diff / 1000) % 60);
-  } else {
-    document.querySelector(".countdown").style.display = "none";
-    document.getElementById("locked").style.display = "none";
-    document.getElementById("surprise").style.display = "block";
-  }
-}, 1000);
-
-/* play song on tap (mobile safe) */
+/* play song */
 document.getElementById("playBtn").addEventListener("click", () => {
   document.getElementById("song").play();
 });
@@ -226,4 +154,3 @@ setInterval(() => {
 
 </body>
 </html>
-
