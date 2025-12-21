@@ -49,8 +49,8 @@ h1 {
   margin-bottom: 40px;
 }
 
-/* CONTENT */
-#surprise p {
+/* MESSAGE */
+.message {
   max-width: 520px;
   margin: 0 auto 30px;
   font-size: 16px;
@@ -58,12 +58,22 @@ h1 {
   line-height: 1.6;
 }
 
-#surprise img {
-  width: 220px;
-  border-radius: 20px;
-  margin: 10px;
+/* IMAGES – SAME SIZE GUARANTEED */
+.photos {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
 }
 
+.photos img {
+  width: 220px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+/* BUTTON */
 #playBtn {
   margin-top: 30px;
   background: #ff8fa3;
@@ -75,6 +85,7 @@ h1 {
   cursor: pointer;
 }
 
+/* FOOTER */
 .footer {
   margin-top: 60px;
   font-size: 14px;
@@ -108,23 +119,23 @@ h1 {
     A little space made just for you 🤍
   </div>
 
-  <div id="surprise">
-    <p>
-      Happy Birthday 🤍<br>
-      You bring so much warmth, happiness, and calm wherever you go.
-      This little space is just to remind you how special you are today.
-    </p>
-
-    <img src="photo1.jpg" alt="Memory">
-    <img src="photo2.jpg" alt="Memory">
-
-    <div>
-      <button id="playBtn">▶ Play Birthday Music</button>
-    </div>
-
-    <!-- HAPPY BIRTHDAY MUSIC -->
-    <audio id="song" src="happybirthday.mp3" loop></audio>
+  <div class="message">
+    Happy Birthday 🤍<br>
+    Wishing you happiness, calm, and smiles today and always.
+    This little page is just to celebrate you.
   </div>
+
+  <div class="photos">
+    <img src="photo1.jpg" alt="Photo 1">
+    <img src="photo2.jpg" alt="Photo 2">
+  </div>
+
+  <div>
+    <button id="playBtn">▶ Play Birthday Music</button>
+  </div>
+
+  <!-- Birthday music ONLY -->
+  <audio id="song" src="happybirthday.mp3" loop></audio>
 
   <div class="footer">Made with love 💗</div>
 
