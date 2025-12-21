@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Happy Birthday My Love</title>
+<title>Happy Birthday Rishi</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 
@@ -49,11 +49,7 @@ h1 {
   margin-bottom: 40px;
 }
 
-/* SURPRISE */
-#surprise {
-  margin-top: 10px;
-}
-
+/* CONTENT */
 #surprise p {
   max-width: 520px;
   margin: 0 auto 30px;
@@ -106,7 +102,7 @@ h1 {
 
 <div class="container">
 
-  <h1>Happy Birthday, My Love 🎂</h1>
+  <h1>Happy Birthday Rishi 🎂</h1>
 
   <div class="subtitle">
     A little space made just for you 🤍
@@ -114,28 +110,28 @@ h1 {
 
   <div id="surprise">
     <p>
-      Happy Birthday my love 🤍<br>
-      You make my life softer, my heart calmer, and my days happier.
-      This little space is just a reminder of how deeply you are loved —
-      always.
+      Happy Birthday 🤍<br>
+      You bring so much warmth, happiness, and calm wherever you go.
+      This little space is just to remind you how special you are today.
     </p>
 
-    <img src="photo1.jpg" alt="Us">
-    <img src="photo2.jpg" alt="Us">
+    <img src="photo1.jpg" alt="Memory">
+    <img src="photo2.jpg" alt="Memory">
 
     <div>
-      <button id="playBtn">▶ Play our song</button>
+      <button id="playBtn">▶ Play Birthday Music</button>
     </div>
 
-    <audio id="song" src="tumsehi.mp3"></audio>
+    <!-- HAPPY BIRTHDAY MUSIC -->
+    <audio id="song" src="happybirthday.mp3" loop></audio>
   </div>
 
-  <div class="footer">Made with love, just for you 💗</div>
+  <div class="footer">Made with love 💗</div>
 
 </div>
 
 <script>
-/* play song */
+/* play birthday music */
 document.getElementById("playBtn").addEventListener("click", () => {
   document.getElementById("song").play();
 });
